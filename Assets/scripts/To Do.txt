@@ -1,0 +1,26 @@
+due 3/11 @ 11:59
+
+rules:
+
+Score: Some action you can take makes a number go up. The score is displayed on screen.
+- Maybe every zombie you shoot gives you 1 point
+- Maybe you have 30 seconds of oxygen and need to pick up oxygen tanks to stay alive
+- Maybe you collect keys, gaining 1 when you pick one up and losing 1 when you open a door
+
+Timer: Something happens after a countdown or cooldown
+- Maybe something bad spawns ever 3 seconds and the player has survive as long as possible
+- Maybe the game ends after 30 seconds
+- Maybe bad things spawn in faster the closer to the round’s end you get
+
+Game Manager: An invisible script that handles jobs not tied to any one specific gameobject
+- Your ‘Score’ text must only be set by the Game Manager
+- This will feel a little annoying the first time, but is much easier in the long run
+
+Also you can add anything else you can think of, but be sure you can make it in five weeks
+
+
+to do:
+- 
+
+done: 
+- 
