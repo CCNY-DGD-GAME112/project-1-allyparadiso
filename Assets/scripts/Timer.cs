@@ -20,7 +20,7 @@ public class Timer : MonoBehaviour
             Vector3 spawnPoint = new Vector3(Random.Range(-8f, 8f), Random.Range(-4f, 4f), 0);
             Instantiate(Coin, spawnPoint, Quaternion.identity);
 
-            audioSource.PlayOneShot(audioClip);
+            
         }
     }
 }
