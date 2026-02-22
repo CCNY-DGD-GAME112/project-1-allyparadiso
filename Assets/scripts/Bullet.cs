@@ -10,7 +10,6 @@ public class Bullet : MonoBehaviour
     private void Update()
     {
         transform.position += direction * speed;
-        rb.AddForce(direction * speed, ForceMode2D.Impulse);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
