@@ -24,7 +24,7 @@ public class PlayerScript : MonoBehaviour
         {
             transform.position += new Vector3(-1, 0, 0) * speed;
         }
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKey(KeyCode.A))
         {
             transform.position += new Vector3(-1, 0, 0) * speed;
         }

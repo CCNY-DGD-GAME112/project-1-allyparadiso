@@ -19,7 +19,8 @@ public class Bullet : MonoBehaviour
         {
             Enemy health = otherGameObject.GetComponent<Enemy>();
             health.TakeDamage();
-            Destroy(gameObject);
+            
         }
+        Destroy(gameObject);
     }
 }
