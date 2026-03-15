@@ -855,8 +855,8 @@ Transform:
   m_GameObject: {fileID: 527665450}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.33, y: -3.37, z: 0}
-  m_LocalScale: {x: 0.77, y: 0.77, z: 0.77}
+  m_LocalPosition: {x: -7.34, y: -3.64, z: 0}
+  m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1691750263}
@@ -923,7 +923,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.004572153, y: 1.4640067}
+  m_Offset: {x: -0.065938115, y: 1.4640067}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -933,7 +933,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.5211844, y: 2.9018693}
+  m_Size: {x: 1.3801639, y: 2.9018693}
   m_EdgeRadius: 0
 --- !u!114 &527665455
 MonoBehaviour:
@@ -947,13 +947,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1485b9aa506c9684d9398a4e4fe1581d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
+  target: {fileID: 833865268}
   currentHealth: 5
   moveSpeed: 2
   direction: 1
   attackDamage: 1
   maxHealth: 5
-  leftBoundary: {fileID: 0}
-  rightBoundary: {fileID: 0}
   blood: {fileID: 8954407313642240981, guid: 8ebff258fe3a9a249947cf9fa5ec8b45, type: 3}
 --- !u!1 &795709603
 GameObject:
@@ -1060,7 +1059,7 @@ GameObject:
   - component: {fileID: 833865270}
   - component: {fileID: 833865269}
   m_Layer: 0
-  m_Name: Square
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1115,7 +1114,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 8993282178178413653, guid: b6a5594cf634289409e7b8506923c20f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1134,9 +1133,9 @@ Transform:
   m_GameObject: {fileID: 833865266}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -3.6296, y: -2.349, z: 0}
-  m_LocalScale: {x: 0.8793, y: 2.216035, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: -0.26, y: -3.55, z: 0}
+  m_LocalScale: {x: 8, y: 8, z: 8}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 966473318}
   m_Father: {fileID: 0}
@@ -1202,17 +1201,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.01069117, y: 0.14809324}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 0.22, y: 0.29}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.18328509, y: 0.28774568}
   m_EdgeRadius: 0
 --- !u!114 &833865271
 MonoBehaviour:
@@ -1226,7 +1225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e21eae73cb3be804bb74390d8c3e1151, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  speed: 0.2
+  speed: 0.05
 --- !u!1 &947506452
 GameObject:
   m_ObjectHideFlags: 0
@@ -1881,7 +1880,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1945749470402136877, guid: 8ebff258fe3a9a249947cf9fa5ec8b45, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.79
+      value: -3.09
       objectReference: {fileID: 0}
     - target: {fileID: 1945749470402136877, guid: 8ebff258fe3a9a249947cf9fa5ec8b45, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1939,7 +1938,7 @@ SceneRoots:
   - {fileID: 947506454}
   - {fileID: 188597255}
   - {fileID: 1197575522}
-  - {fileID: 833865268}
   - {fileID: 326731165}
   - {fileID: 795709605}
   - {fileID: 1985635506}
+  - {fileID: 833865268}

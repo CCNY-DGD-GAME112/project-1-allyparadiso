@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    public Transform target;
     public int currentHealth;
     public float moveSpeed = 2f;
     private Rigidbody2D rb;
@@ -10,43 +11,19 @@ public class Enemy : MonoBehaviour
     public int direction = 1;
     public int attackDamage = 1;
     public int maxHealth = 5;
-
-    public float minX = -5f;
-    public float maxX = 5f;
-    public float minY = -5f;
-    public float maxY = 5f;
+    
 
     public ParticleSystem blood;
     private void Start()
     {
-        
         currentHealth = maxHealth;
     }
-    //private void Update()
-    //{
-        //rb.linearVelocity = new Vector2(direction * moveSpeed, rb.linearVelocity.y);
-    //}
+
     private void FixedUpdate()
     {
-
-        Vector2 clampedPosition = transform.position;
-
-        clampedPosition.x = Mathf.Clamp(transform.position.x, minX, maxX);
-        clampedPosition.y = Mathf.Clamp(transform.position.y, minY, maxY);
-
-        transform.position = clampedPosition;
+        transform.position = Vector3.MoveTowards(transform.position, target.transform.position, 0.01f);  
     }
 
-    
-
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Wall"))
-        {
-            Flip();
-        }
-    }
     void Flip()
     {
         direction *= -1;
