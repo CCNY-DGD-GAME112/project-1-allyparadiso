@@ -3,13 +3,15 @@ using UnityEngine;
 public class PlayerScript : MonoBehaviour
 {
     public float speed = 5f;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public int currentHealth;
+    public int maxHealth = 10;
+    public float horizontalInput;
+    private bool isFacingRight = true;
 
-    // Update is called once per frame
+    private void Start()
+    {
+        currentHealth = maxHealth;
+    }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.D))
@@ -28,5 +30,35 @@ public class PlayerScript : MonoBehaviour
         {
             transform.position += new Vector3(-1, 0, 0) * speed;
         }
+
+        horizontalInput = Input.GetAxis("Horizontal");
+        if (horizontalInput > 0 && !isFacingRight)
+        {
+            Flip();
+        }
+        else if (horizontalInput < 0 && isFacingRight)
+        {
+            Flip();
+        }
+    }
+    void Flip()
+    {
+        isFacingRight = !isFacingRight;
+        Vector3 scale = transform.localScale;
+        scale.x *= -1;
+        transform.localScale = scale;
+    }
+    public void TakeDamage()
+    {
+        currentHealth -= 1;
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
+    }
+
+    public void Die()
+    {
+        Destroy(gameObject);
     }
 }

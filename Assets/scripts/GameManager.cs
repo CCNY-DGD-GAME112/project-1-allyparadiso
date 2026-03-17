@@ -4,46 +4,33 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
+    public TextMeshProUGUI killCountText;
+    public int kills = 0;
 
     void Awake()
     {
-        if (Instance != null)
+        if (Instance == null)
         {
-            Destroy(gameObject);
             Instance = this;
         }
-    }
-}
-public class Score : MonoBehaviour
-{
-    public TextMeshPro ScoreText;
-    public int score = 0;
-    public GameObject coin;
-    public Rigidbody2D rb;
-    GameObject player;
-    
-    void Start()
-    {
-        rb = GetComponent<Rigidbody2D>();
-        UpdateScore();
+        else 
+        {
+            Destroy(gameObject);
+        }
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
+    private void Update()
     {
-        if (coin != null)
-        {
-            Destroy(coin);
-            score++;
-            UpdateScore();
-        }
-        if (other.gameObject.CompareTag("Enemy"))
-        {
-            Destroy(player);
-        }
+        UpdateKillCount();
     }
-    void UpdateScore()
+    public void AddKill()
     {
-        ScoreText.text = "Score: " + score;
+        kills++;
+        UpdateKillCount();
     }
-   
+
+    void UpdateKillCount()
+    {
+        killCountText.text = "Kills: " + kills.ToString();
+    }
 }

@@ -4,10 +4,13 @@ using UnityEngine;
 public class Timer : MonoBehaviour
 {
     public TextMeshProUGUI timerText;
-    public float timer = 5;
-    public GameObject Coin;
-    public AudioSource audioSource;
-    public AudioClip audioClip;
+    public float timer = 3;
+    public GameObject enemyPrefab;
+    public Transform targetTransform;
+
+    public float minX = -2f;
+    public float maxX = 10f;
+    public float maxY = -3.75f;
 
     // Update is called once per frame
     void Update()
@@ -16,11 +19,19 @@ public class Timer : MonoBehaviour
         timerText.text = timer.ToString("F2");
         if (timer <= 0)
         {
-            timer = 5;
-            Vector3 spawnPoint = new Vector3(Random.Range(-8f, 8f), Random.Range(-4f, 4f), 0);
-            Instantiate(Coin, spawnPoint, Quaternion.identity);
+            timer = 3;
+            SpawnEnemy();
+        }
+        void SpawnEnemy()
+        {
+            Vector3 randomSpawnPosition = new Vector3(Random.Range(minX, maxX), maxY, 0);
+            GameObject newInstance = Instantiate(enemyPrefab, randomSpawnPosition, Quaternion.identity);
 
-            
+            Enemy enemyScript = newInstance.GetComponent<Enemy>();
+            if (enemyScript != null)
+            {
+                enemyScript.SetTarget(targetTransform);
+            }
         }
     }
 }
