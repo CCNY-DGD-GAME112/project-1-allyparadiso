@@ -8,7 +8,7 @@ public class Timer : MonoBehaviour
     public GameObject enemyPrefab;
     public Transform targetTransform;
 
-    public float minX = -2f;
+    public float minX = -3f;
     public float maxX = 10f;
     public float maxY = -3.75f;
 

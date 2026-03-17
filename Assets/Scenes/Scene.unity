@@ -1417,7 +1417,7 @@ MonoBehaviour:
   timer: 3
   enemyPrefab: {fileID: 2079743621506662405, guid: 5c35809f55872f64ea9be6b862882e84, type: 3}
   targetTransform: {fileID: 3158006785901771000, guid: 6e90f1188891afa40988c2942b3b400a, type: 3}
-  minX: -10
+  minX: -2
   maxX: 10
   maxY: -3.75
 --- !u!1 &2055359758
